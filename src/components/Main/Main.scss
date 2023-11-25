@@ -1,0 +1,74 @@
+@use '../../styles//colors';
+
+
+.Main{
+    background-color: colors.$dark-neutral;
+    color: white;
+    width: 100vh;
+    height: 100vh;
+    margin: none;
+    padding: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 200px;
+    }
+}
+
+.logo{
+    width: 100px;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__form{
+    color: colors.$main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 22rem;
+    box-shadow: 0 .125rem 1rem rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+    margin-bottom: 1rem;
+    }
+    &__title{
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+
+        text-align: center;
+        font-size: 1.5rem;
+        border-bottom: .3125rem solid colors.$secondary;
+        padding-bottom: 0.5rem;
+    }
+    &__button {
+        margin-top: 1rem;
+        background-color: colors.$secondary;
+        border: .0625rem solid colors.$secondary;
+        color: #fff;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        font-size: inherit;
+        transition: background-color 0.15s;
+
+        &:hover {
+            background-color: colors.$main;
+        }
+    }
+    &__message {
+        border-left: .3125rem solid #ddd;
+        padding: 0.75rem;
+        margin-top: 2rem;
+    }
+}
