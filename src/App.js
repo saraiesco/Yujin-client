@@ -1,8 +1,7 @@
 import './App.scss';
 import Main from './components/Main/Main';
-import Login from './components/Login/Login';
 import Signup from './components/SignUp/SignUp';
-import Calendar from './components/Calendar/Calendar';
+import Clinician from './components/Clinician/Clinician';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -11,9 +10,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element ={<Main/>}/>
-          <Route path='/login' element ={<Login />} /> 
           <Route path='/signup' element ={<Signup/>} /> 
-          <Route path='/calendar' element ={<Calendar />} />
+          <Route path='/clinician' element ={<Clinician />} />
         </Routes>
       </BrowserRouter>
     </div>

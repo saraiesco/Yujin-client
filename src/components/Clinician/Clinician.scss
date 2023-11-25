@@ -1,0 +1,11 @@
+@use '../../styles/colors';
+
+.clinician{
+    background-color: colors.$secondary;
+    width: 100vh;
+    height: 100vh;
+}
+
+.logout{
+    max-width: 20px;
+}
