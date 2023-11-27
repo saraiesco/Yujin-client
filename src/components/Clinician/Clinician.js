@@ -32,12 +32,45 @@ async function onClick(){
   handleLogout();
   navigate('/');
 }
+
+
+
+//for each user.fullClientObject grab lastApp and nexApp
+// convert format into a timestamp
+const calendarData = [];
+
+for (const clientObject of user.fullClientObjects) {
+  const events = [];
+
+  const lastAppDate = new Date(clientObject.lastApp);
+  const thirtyMinutesLater = lastAppDate.setMinutes(lastAppDate.getMinutes() + 30);
+
+  events.push({
+    title: clientObject.name,
+    start: lastAppDate.getTime(),
+    end: thirtyMinutesLater,
+  });
+
+  if (clientObject.nextApp) {
+    events.push({
+      title: clientObject.name,
+      start: new Date(clientObject.nextApp).getTime(),
+      end: new Date(clientObject.nextApp).setMinutes(new Date(clientObject.nextApp).getMinutes() + 30),
+    });
+  }
+
+  calendarData.push(...events);
+}
+
     return(
         <div className='clinician'>
             <p>Welcome {user.name.split(" ")[0]}!</p>
             <img className='logout' src={logout} onClick={onClick}/>
             <Calendar
-      localizer={localizer}g
+      localizer={localizer}
+      events={calendarData}
+      views={[Views.MONTH, Views.AGENDA]}
+      toolbarClassName="my-toolbar-class"
       startAccessor="start"
       endAccessor="end"
       style={{ height: 500 }}
