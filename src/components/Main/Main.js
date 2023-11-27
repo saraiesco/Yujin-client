@@ -1,8 +1,29 @@
 import './Main.scss';
 import logo from '../../assets/yujin.png';
 import {Link,useNavigate} from 'react-router-dom';
+import axios from 'axios';
 
-function Main(){
+function Main({handleLogin, user}){
+    const navigate = useNavigate();
+
+    async function handleSubmit (event) {
+        event.preventDefault();
+        
+        axios.post("http://localhost:8080/clinicians/login", {
+            username: event.target.username.value,
+            password: event.target.password.value
+        })
+            .then((response) => {
+                let data = response.data;
+                handleLogin(data);
+                navigate('/clinician');
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+    };
+
     return(
         <div className= 'Main'>
             <div className='Main__header'>
@@ -10,12 +31,12 @@ function Main(){
             <img className='logo' src={logo}/>
             </div>
             <div className='login'>
-                <form className="login__form" >
+                <form className="login__form" onSubmit={handleSubmit}>
                     <h1 className="login__title">Log in</h1>
 
                     
-                    <label htmlFor='Email' >Username</label>
-                    <input type="text" name="email" label="email" />
+                    <label htmlFor='username' >Username</label>
+                    <input type="text" name="username" label="username" />
                 
 
                 

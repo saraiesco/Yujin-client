@@ -15,7 +15,7 @@ function SignUp(){
                 </div>
                 
                 <div className='signup__flex'>
-                <label className="signup__label" htmlFor='email' >Email</label>
+                <label className="signup__label" htmlFor='email' >Username</label>
                 <input type="text" name="email" label="Email" />
                 <label className="signup__label" htmlFor='password' >Password</label>
                 <input type="password" name="password" label="Password" />
