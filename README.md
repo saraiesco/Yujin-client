@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Hira
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hira is a client tracking app for medical clinicians. Clinicians are able to view, add, edit, and delete clients. Hira also includes calendar view for appointments. Notes section coming soon :).
 
 ## Available Scripts
 
