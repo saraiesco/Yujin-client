@@ -52,16 +52,45 @@
         color: #FFFFFF;
         cursor: pointer;
         font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-        font-size: 16px;
+        font-size: 10px;
         font-weight: 700;
-        line-height: 24px;
         opacity: 1;
         outline: 0 solid transparent;
-        padding: 8px 18px;
+        padding: 4px 20px;
         width: fit-content;
         border: 0;
+        position: absolute;
+        left: 8rem;
     }
-    
+    &_button:hover{
+        box-shadow: #FFFFFF 0 10px 20px -10px;
+    }
+    &_button:active{
+        background: #9a9ae6;
+    }
+    &_button--trash{
+        background: #5E5DF0;
+        border-radius: 999px;
+        box-shadow: #5E5DF0 0 10px 20px -10px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+        font-size: 8px;
+        font-weight: 600;
+        opacity: 1;
+        padding: 4px 20px;
+        width: fit-content;
+        border: 0;
+        margin-left: 30rem;
+
+    }
+    &_button--trash:hover{
+        box-shadow: #FFFFFF 0 10px 20px -10px;
+    }
+    &_button--trash:active{
+        background: #9a9ae6;
+    }
 }
 
 .patient{
@@ -90,4 +119,41 @@
     direction: ltr;
     text-decoration: none;
     font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 48
+  }
+
+  .single{
+    background-color: white;
+    font-weight: 600;
+    color: #afafaf;
+    margin: 1rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    @include mixins.tablet{
+        margin-left: 8rem;
+    }
+    &_top{
+        display: flex;
+        justify-content:flex-start;
+        margin-left: 1rem;
+        padding-top: 1rem;
+    }
+    &_img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        background-color: #ccc;
+    }
+    &_name{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 3rem;
+    }
+    &_lable{
+        color: rgb(36, 36, 36);
+    }
+    &_flex{
+        display: flex;
+        justify-content: space-around;
+    }
   }

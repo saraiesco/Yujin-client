@@ -7,10 +7,65 @@ function Patients({user}){
     const [isActive, setIsActive]=useState(false);
     const [patient, setPatient]=useState(null);
 
+   console.log(patient)
     return(
         <div className='patients'>
+            <div>
+            {/* <span class="material-symbols-outlined">search</span> */}
+            <input type="search" name="search" id="search" placeholder="search"/>
+            </div>
+ 
+{patient? 
+<>
+<div className='single'>
+    <div className='single_top'>
+        <p>Patient &gt; {patient.name}</p>
+    </div>
+         <div className='single_topbottom'>
+                <div className='single_top'>
+                     <img src={patient.img} className='single_img'/>
+                     <div className='single_name'>
+                        <h2 className='single_lable'>Patient:</h2>
+                        <div  className='single_lable'> {patient.name}</div> 
+                     </div>
+                </div>
+
+            <div className='single_flex'>
+                <div className='single_left'>
+                    <div>
+                    <p >Age:</p>
+                    <div className='single_lable'>{patient.age}</div>
+                    </div>
+                    <div>
+                        <div className='single_lable'> Diagnosis: </div>
+                        <div > {patient.conditions[0]}</div> 
+                    </div>
+                    <div>
+                        <p className='single_lable'>Symptoms:</p>
+                        <div > {patient.symptoms}</div> 
+                    </div>
+                </div>
+
+                <div className='single_right'>
+                <div>
+                    <p >Last Appointment:</p>
+                    <div className='single_lable'> {patient.lastApp}</div> 
+                </div>
+                 <div>
+                    <p >Next Appointment:</p>
+                    <div className='single_lable'> {patient.nextApp}</div> 
+                </div>
+                </div>
+
+             </div>   
+                <button className='patients_button--trash'><span class="material-symbols-outlined">delete</span></button>
+         </div>
+
+</div>
+ </>: 
+        <>
             <h2 className='patients_title'>Patient List</h2>
-            <button className='patients_button'>Add Patient</button>
+            <button className='patients_button'><span class="material-symbols-outlined">add</span></button>
             <div className='patients_chart'>
                 <div className='patients_header'>
                     <p className='patients_nondynamic--1'>Patient</p>
@@ -22,7 +77,7 @@ function Patients({user}){
                 <div className='patients_container'>
                 {user.fullClientObjects.map((person, idx) => {
                     return(
-                    <div className='patients_individual'>
+                    <div className='patients_individual' onClick={()=>setPatient(person)}>
                         <img src={person.img} className='patient_img'/>
                         <div key={idx} className='patient_item'> {person.name}</div> 
                         <div>{person.age}</div>
@@ -33,6 +88,8 @@ function Patients({user}){
                  })}
                 </div>
             </div>
+        </>
+}
         </div>
     )
 }
