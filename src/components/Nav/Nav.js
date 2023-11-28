@@ -6,7 +6,7 @@ import logo from '../../assets/yujin.png'
 function Nav({handleLogout}){
     return(
         <div className='nav'>
-            <img src={logo} className = "logo"/>
+            <img src={logo} className = "navlogo"/>
             <div onClick={() => window.history.back()}><span class="material-symbols-outlined nav__icon">arrow_back</span></div>
             <Link to='/clinician'><span className="material-symbols-outlined nav__icon">calendar_month</span></Link>
             <Link to='/patients'><span className="material-symbols-outlined nav__icon">group</span></Link>
