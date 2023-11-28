@@ -5,7 +5,7 @@ Hira is a client tracking app for medical clinicians. Clinicians are able to vie
 the live deployed app can be found here:
 https://hira-a3c2.onrender.com
 
-<img width="495" alt="screenshot" src="blob:chrome-untrusted://media-app/210dcd17-480b-4bff-899d-3dfe9998568b">
+<img width="495" alt="screenshot" src="https://i.imgur.com/FKmRObj.png">
 
 ## Available Scripts
 
