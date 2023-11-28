@@ -1,0 +1,74 @@
+@use '../../styles/fonts';
+@use '../../styles/colors';
+@use '../../styles/mixins';
+
+.nav{
+    position: fixed;
+    z-index: 20;
+    background-color: white;
+    color: grey;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    text-decoration: none;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    box-shadow: 0 .125rem 1rem rgba(0, 0, 0, 0.1);
+    @include mixins.tablet{
+       flex-direction: column;
+       top: 0; /* Opposite of bottom */
+       right: 0; /* Opposite of left */
+       left: 0; /* Allow natural positioning */
+       width: 100px;
+    }
+    &__icon{
+        height: 100%;
+        padding: 1rem;
+        @include mixins.tablet{
+            padding-bottom: 2rem;
+         }
+    }
+    &__icon:hover{
+        border-top: .1875rem solid colors.$main;
+        border-bottom: .1875rem solid colors.$main;
+        color: colors.$main;
+        @include mixins.tablet{
+            // border-left: 0.3rem solid colors.$main;
+            // border-right: 0.3rem solid colors.$main;
+            border-top: 0rem;
+            border-bottom: 0rem;
+         }
+    }
+}
+
+a{
+    color: inherit;
+}
+
+.logo{
+  max-width: 10%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  @include mixins.tablet{
+    max-width: none;
+    padding-bottom: 20px;
+ }
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.25rem;
+    fill: 1;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    color:inherit;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    text-decoration: none;
+    font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 48
+  }

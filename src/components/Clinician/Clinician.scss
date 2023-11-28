@@ -1,11 +1,16 @@
 @use '../../styles/colors';
+@use '../../styles/mixins';
 
 .clinician{
     background-color: colors.$secondary;
     width: 100vh;
     height: 100vh;
+    &_welcome{
+        margin: 0%;
+    }
+    @include mixins.tablet{
+        margin-left: 101px;
+     }
 }
 
-.logout{
-    max-width: 20px;
-}
+

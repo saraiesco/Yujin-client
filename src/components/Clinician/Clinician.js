@@ -64,8 +64,8 @@ for (const clientObject of user.fullClientObjects) {
 
     return(
         <div className='clinician'>
-            <p>Welcome {user.name.split(" ")[0]}!</p>
-            <img className='logout' src={logout} onClick={onClick}/>
+            <p className='clinician__welcome'>Welcome {user.name.split(" ")[0]}!</p>
+            {/* <img className='logout' src={logout} onClick={onClick}/> */}
             <Calendar
       localizer={localizer}
       events={calendarData}
