@@ -2,6 +2,9 @@
 
 Hira is a client tracking app for medical clinicians. Clinicians are able to view, add, edit, and delete clients. Hira also includes calendar view for appointments. Notes section coming soon :).
 
+the live deployed app can be found here:
+https://hira-a3c2.onrender.com
+
 ## Available Scripts
 
 In the project directory, you can run:
