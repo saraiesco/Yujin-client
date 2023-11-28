@@ -5,7 +5,7 @@ import Clinician from './components/Clinician/Clinician';
 import Nav from './components/Nav/Nav';
 import Patients from './components/Patients/Patients';
 import Notes from './components/Notes/Notes';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, useNavigate} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -17,7 +17,6 @@ function App() {
 
   const handleLogin=(user)=>{
     setUser(user);
-    console.log(user)
   }
 
   return (
@@ -32,7 +31,7 @@ function App() {
   }
         <Routes>
           <Route path="/"element={<Main handleLogin={handleLogin} user={user} />}/>
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup handleLogin={handleLogin}/>} />
           <Route path="/clinician" element={ <Clinician handleLogout={handleLogout} user={user}/>}/>
           <Route path="/patients" element={<Patients user={user} />}/>
           <Route path="/notes" element={<Notes user={user} />} />

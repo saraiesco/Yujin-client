@@ -1,4 +1,5 @@
 @use '../../styles/colors';
+@use '../../styles//mixins';
 
 .patients{
     background-color: colors.$secondary;
@@ -8,6 +9,59 @@
         color:white;
         padding-top: 1rem;
     }
+    &_chart{
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        font-weight: 600;
+        color: #afafaf;
+        margin: 6rem;
+        justify-content: center;
+        @include mixins.tablet{
+            margin-left: 8rem;
+        }
+    }
+    &_header{
+        display: flex;
+        justify-content: space-around;
+        margin: 1rem;
+        font-weight: 800;
+    }
+    &_container{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        margin: 1rem;
+    
+    }
+    &_individual{
+        display: flex;
+        justify-content: space-around;
+        border-top: 0.1rem solid grey;
+      
+    }
+    &_individual:hover{
+        background-color: #ebeaea;
+        cursor: pointer;
+    }
+    &_button{
+        background: #5E5DF0;
+        border-radius: 999px;
+        box-shadow: #5E5DF0 0 10px 20px -10px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        opacity: 1;
+        outline: 0 solid transparent;
+        padding: 8px 18px;
+        width: fit-content;
+        border: 0;
+    }
+    
 }
 
 .patient{
@@ -19,6 +73,7 @@
         // transform: scale(1.2);
     }
 }
+
 
 .material-symbols-outlined {
     font-family: 'Material Symbols Outlined';
