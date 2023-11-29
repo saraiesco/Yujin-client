@@ -1,13 +1,20 @@
 import './Patients.scss';
 import {Link} from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Form from '../Form/Form';
 
 
-function Patients({user}){
+function Patients({user, show, setShow, handleClose}){
     const [isActive, setIsActive]=useState(false);
     const [patient, setPatient]=useState(null);
 
-   console.log(patient)
+
+    const handleClick=()=>{
+        setShow(true)
+        console.log("button clicked :)")
+    }
+
+
     return(
         <div className='patients'>
             <div>
@@ -58,14 +65,16 @@ function Patients({user}){
                 </div>
 
              </div>   
-                <button className='patients_button--trash'><span class="material-symbols-outlined">delete</span></button>
+                <button className='single_button--trash'><span class="material-symbols-outlined">delete</span></button>
          </div>
 
 </div>
  </>: 
         <>
             <h2 className='patients_title'>Patient List</h2>
-            <button className='patients_button'><span class="material-symbols-outlined">add</span></button>
+                <button className='patients_button' onClick={handleClick}>
+                    +
+                </button>
             <div className='patients_chart'>
                 <div className='patients_header'>
                     <p className='patients_nondynamic--1'>Patient</p>
@@ -90,6 +99,7 @@ function Patients({user}){
             </div>
         </>
 }
+{show && <Form user={user} show={show} setShow={setShow} handleClose={handleClose} />}
         </div>
     )
 }
