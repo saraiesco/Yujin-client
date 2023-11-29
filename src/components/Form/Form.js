@@ -6,10 +6,14 @@ function Form({show,setShow,handleClose}){
 
     const handleSubmit = (event) => {
       event.preventDefault();
+
+      const age = parseInt(event.target.elements.age.value);
+      const conditions = event.target.elements.conditions.value.split(',');
+
       axios.post("http://localhost:8080/clients", {
         name : event.target.elements.name.value,
-        age : event.target.elements.age.value,
-        conditions : [ event.target.elements.conditions.value]
+        age : age,
+        conditions : conditions
         })
             .then((response) => {
                 let data = response.data;
