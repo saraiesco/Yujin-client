@@ -1,6 +1,4 @@
 import './Form.scss';
-import {Link} from 'react-router-dom';
-import { useState } from 'react';
 import axios from 'axios';
 
 
@@ -11,7 +9,7 @@ function Form({show,setShow,handleClose}){
       axios.post("http://localhost:8080/clients", {
         name : event.target.elements.name.value,
         age : event.target.elements.age.value,
-        conditions : event.target.elements.conditions.value
+        conditions : [ event.target.elements.conditions.value]
         })
             .then((response) => {
                 let data = response.data;

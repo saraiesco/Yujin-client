@@ -1,24 +1,20 @@
 import './Patients.scss';
-import {Link} from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Form from '../Form/Form';
 
 
 function Patients({user, show, setShow, handleClose}){
-    const [isActive, setIsActive]=useState(false);
     const [patient, setPatient]=useState(null);
 
 
     const handleClick=()=>{
         setShow(true)
-        console.log("button clicked :)")
     }
 
 
     return(
         <div className='patients'>
             <div>
-            {/* <span class="material-symbols-outlined">search</span> */}
             <input type="search" name="search" id="search" placeholder="search"/>
             </div>
  
